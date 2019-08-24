@@ -6,7 +6,7 @@ const CategorySelection = ({ onRouteChange }) => {
 			<div className="pa6">
 			<article className="mw6 center bg-black br3 pa3 pa4-ns ba b--black-10">
 			  <div className="tc">
-			    <h1 className="f1">STAR <br/> SEARCH</h1>
+			    <h1 className="tc f1 font-star-wars">STAR <br/> SEARCH</h1>
 			    <hr className="white mw6 bb bw1 b--black-10" />
 			  </div>
 			

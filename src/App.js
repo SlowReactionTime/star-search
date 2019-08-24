@@ -3,8 +3,10 @@ import { Component } from 'react';
 import './App.css';
 import Navigation from './Navigation/Navigation.js';
 import Card from './Card/Card.js';
+import CardList from './CardList/CardList.js';
 import CategorySelection from './CategorySelection/CategorySelection.js';
 import Logo from './Logo/Logo.js';
+import SearchBox from './SearchBox/SearchBox.js';
 import Scroll from './Scroll.js';
 import Particles from 'react-particles-js';
 import {render} from 'react-dom';
@@ -34,7 +36,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'home'
+      route: 'character',
+      searchField: ''
     } 
   };
 
@@ -42,8 +45,14 @@ class App extends Component {
     this.setState({route: route});
   }  
 
+  onSearchChange = (event) => {
+    this.setState({ searchField: event.target.value });
+    console.log(event);
+  }
+
   render() {
-    const { route } = this.state; 
+    const { route } = this.state;
+
     return(
       <div>
       <Particles className='particles' params={ constParticles } />
@@ -53,10 +62,10 @@ class App extends Component {
         : <div>
             <Navigation onRouteChange={this.onRouteChange} />
             <Logo route={ route } />
-            {
-            // <SearchBox />
-            // <CardList />
-            }
+            <div className='tc'>
+              <SearchBox onSearchChange={this.onSearchChange} route={ route } />
+              <CardList route={ route } />
+            </div>
           </div>
       }
       </div>

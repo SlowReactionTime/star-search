@@ -4,7 +4,7 @@ const Navigation = ({ onRouteChange }) => {
 
 		return (
 			<nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-				<p onClick={() => onRouteChange('home')} className="f3 link glow br3 ph3 pv2 mb2 dib white bg-gray" >Category</p>
+				<p onClick={() => onRouteChange('home')} className="mw5 tc br3 pa3 ma2 grow bw2 shadow-5 white bg-blue" >Category</p>
 			</nav>
 		);
 	}

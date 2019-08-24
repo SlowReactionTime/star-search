@@ -1,36 +1,30 @@
 import React from 'react';
+import './Logo.css';
 import character from './character.jpg';
 import starship from './starship.png';
 import planet from './planet.jpg';
 import Tilt from 'react-tilt';
 
 const Logo = ({ route }) => {
+
+	var currentCategory = '';
+	
 	if (route === 'character') {
-		return(
-			<div className='ma4 mt0'>
-				<Tilt className="Tilt br2 shadow-2" options={{ max : 50 }} style={{ height: 250, width: 250 }} >
-				 	<div className="Tilt-inner pa3"><img style={{paddingTop: '40px'}} src={character} alt='character' /></div>
-				</Tilt>
-			</div>
-		);
+		currentCategory = character;
 	} else if (route === 'starship') {
-		return(
-			<div className='ma4 mt0'>
-				<Tilt className="Tilt br2 shadow-2" options={{ max : 50 }} style={{ height: 250, width: 250 }} >
-				 	<div className="Tilt-inner pa3"><img style={{paddingTop: '40px'}} src={starship} alt='starship' /></div>
-				</Tilt>
-			</div>
-		);
+		currentCategory = starship;
 	} else {
-		return(
-			<div className='ma4 mt0'>
-				<Tilt className="Tilt br2 shadow-2" options={{ max : 50 }} style={{ height: 250, width: 250 }} >
-				 	<div className="Tilt-inner pa3"><img style={{paddingTop: '40px'}} src={planet} alt='planet' /></div>
-				</Tilt>
-			</div>
-		);
+		currentCategory = planet;
 	}
 
+	return(
+			<div className='pa2' style={{display: 'flex', justifyContent: 'center'}}>
+				<Tilt className="Tilt container Tilt-inner br2 shadow-5" options={{ max : 50 }} style={{ height: 300, width: 300 }} >			 	
+				 		<img style={{ height: 300, width: 300 }} src={currentCategory} alt='currentCategory' />
+				 		<h1 className='font-big font-star-wars centered'>STAR <br />SEARCH</h1>
+				</Tilt>
+			</div>
+	);
 }
 
 export default Logo;

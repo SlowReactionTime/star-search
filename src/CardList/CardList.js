@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
-import Card from './Card';
+import Card from '../Card/Card.js';
+import { character } from '../character/character.js';
 
 // CardList returns a series of <Card />s
 // data from robots.js help assign properties of Cards
 const CardList = ({ route }) => {
+
+	var currentCategory = character;
+
 	return(
 		<div>
-			{robots.map((user, i) => {
-				return <Card 
-					key={robots[i].id} 						
-					id={robots[i].id} 
-					name={robots[i].name} 
-					email={robots[i].email} 
+			{currentCategory.map((user, i) => {
+				return <Card  						
+					id={currentCategory[i].id} 
+					name={currentCategory[i].name} 
+					image={currentCategory[i].image}
+					route={ route }
 				/>
 			})}	
 		</div>

@@ -70,7 +70,10 @@
 
 .f1 {
     font-size: 3rem;
-    color: #ffff00;
+}
+
+.bright-yellow {
+    color: #ffff00;;
 }
 
 .f6 {
@@ -94,6 +97,12 @@
 .white {
     background-color: white;
 }
+
+.font-star-wars {
+    color: black;
+    text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
+}
+
 
 
 

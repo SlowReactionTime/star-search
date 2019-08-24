@@ -1,0 +1,21 @@
+.font-star-wars {
+	color: black;
+    text-shadow: -6px 0 yellow, 0 6px yellow, 6px 0 yellow, 0 -6px yellow;
+}
+
+.font-big {
+	font-size: 5em;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

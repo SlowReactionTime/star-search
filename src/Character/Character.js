@@ -1,7 +1,7 @@
 import LukeS from './1.jpg';
 import C3PO from './2.png';
 
-export const characters = [
+export const character = [
   {
     id: 1,
     name: 'Luke Skywalker',
