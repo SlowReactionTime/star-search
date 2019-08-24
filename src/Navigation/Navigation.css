@@ -1,0 +1,14 @@
+.glow {
+    opacity: .7;
+    transition: opacity .15s ease-out;
+}
+
+.glow:hover, .glow:focus {
+    opacity: .9;
+    transition: opacity .15s ease-out;
+}
+
+.glow:active {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}

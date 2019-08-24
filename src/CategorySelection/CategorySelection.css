@@ -1,0 +1,269 @@
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.bb {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.b--black-10 {
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.br3 {
+    border-radius: 2rem;
+}
+
+.br-100 {
+    border-radius: 100%;
+}
+
+.bw1 {
+    border-width: .125rem;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.h3 {
+    height: 4rem;
+}
+
+.lh-copy {
+    line-height: 1.5;
+}
+
+.mw3 {
+    max-width: 20rem;
+}
+
+.mw5 {
+    max-width: 30rem;
+}
+
+.w3 {
+    width: 4rem;
+}
+
+.black-70 {
+    color: rgba(0, 0, 0, .7);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.pa3 {
+    padding: 1rem;
+}
+
+.tc {
+    text-align: center;
+}
+
+.f1 {
+    font-size: 3rem;
+    color: #ffff00;
+}
+
+.f6 {
+    font-size: .875rem;
+}
+
+.measure {
+    max-width: 30em;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 30em) {
+    .pa4-ns {
+        padding: 2rem;
+    }
+}
+.white {
+    background-color: white;
+}
+
+
+
+
+
+
+/*CSS FOR BUTTON FROM HERE*/
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.br3 {
+    border-radius: .5rem;
+}
+
+.bw1 {
+    border-width: .125rem;
+}
+
+.bw2 {
+    border-width: .25rem;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.fw6 {
+    font-weight: 600;
+}
+
+.tracked {
+    letter-spacing: .1em;
+}
+
+.link {
+    text-decoration: none;
+    transition: color .15s ease-in;
+}
+
+.link:link, .link:visited {
+    transition: color .15s ease-in;
+}
+
+.link:hover {
+    transition: color .15s ease-in;
+}
+
+.link:active {
+    transition: color .15s ease-in;
+}
+
+.link:focus {
+    transition: color .15s ease-in;
+    outline: 1px dotted currentColor;
+}
+
+.black {
+    color: #000;
+}
+
+.near-black {
+    color: #111;
+}
+
+.dark-gray {
+    color: #333;
+}
+
+.mid-gray {
+    color: #555;
+}
+
+.white {
+    color: #fff;
+}
+
+.purple {
+    color: #5e2ca5;
+}
+
+.light-purple {
+    color: #a463f2;
+}
+
+.dark-pink {
+    color: #d5008f;
+}
+
+.hot-pink {
+    color: #ff41b4;
+}
+
+.dark-green {
+    color: #137752;
+}
+
+.navy {
+    color: #001b44;
+}
+
+.dark-blue {
+    color: #00449e;
+}
+
+.bg-dark-gold {
+    background-color: #ffc400;
+}
+
+.bg-teal {
+    background-color: #00e1ff;
+}
+
+.bg-brown {
+    background-color: #995900;
+}
+
+.pv2 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.ph3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.mb2 {
+    margin-bottom: .5rem;
+}
+
+.mb4 {
+    margin-bottom: 2rem;
+}
+
+.mt4 {
+    margin-top: 2rem;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.f1 {
+    font-size: 5rem;
+}
+
+
+.f2 {
+    font-size: 2rem;
+}
+
+.f6 {
+    font-size: .875rem;
+}
+
+.glow {
+    opacity: .7;
+    transition: opacity .15s ease-out;
+}
+
+.glow:hover, .glow:focus {
+    opacity: .9;
+    transition: opacity .15s ease-out;
+    transform: scale(1.2);
+}
+
+.glow:active {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
