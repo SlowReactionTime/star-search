@@ -3,8 +3,16 @@
     text-shadow: -6px 0 yellow, 0 6px yellow, 6px 0 yellow, 0 -6px yellow;
 }
 
+.font-small {
+  font-size: 2em;
+}
+
 .font-big {
-	font-size: 5em;
+	font-size: 6em;
+}
+
+.font-medium {
+  font-size: 3em;
 }
 
 .container {

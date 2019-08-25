@@ -7,7 +7,9 @@ import CategorySelection from './CategorySelection/CategorySelection.js';
 import Logo from './Logo/Logo.js';
 import SearchBox from './SearchBox/SearchBox.js';
 import Display from './Display/Display.js';
-import Scroll from './Scroll.js';
+import { character } from './character/character.js';
+import { starship } from './starship/starship.js';
+import { planet } from './planet/planet.js';
 import Particles from 'react-particles-js';
 import axios from 'axios';
 
@@ -36,7 +38,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'character',
+      route: 'home',
       searchField: '',
       people: [],
       starships: [],
@@ -65,12 +67,24 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
+    //change route
     this.setState({route: route});
+
+    //refresh all the data for display whenever route changes
+    this.setState({name: ''});
+    this.setState({height: ''});
+    this.setState({mass: ''});
+    this.setState({birthYear: ''});
+    this.setState({manufacturer: ''});
+    this.setState({starshipClass: ''});
+    this.setState({passenger: ''});
+    this.setState({climate: ''});
+    this.setState({terrain: ''});
+    this.setState({diameter: ''});
   }  
 
   onSearchChange = (event) => {
     this.setState({ searchField: event.target.value });
-    console.log(event);
   }
 
   getCharacter() {
@@ -135,8 +149,24 @@ class App extends Component {
     }
   }
 
+  getCurrentCategory = () => {
+    if (this.state.route === 'character') {
+      return(character);
+    } else if (this.state.route === 'starship') {
+      return(starship);
+    } else {
+      return(planet);
+    }
+  }
+
   render() {
-    const { route, people, name, height, mass, birthYear, manufacturer, starshipClass, passenger, climate, terrain, diameter } = this.state;
+    const { route, searchField, people, name, height, mass, birthYear, manufacturer, starshipClass, passenger, climate, terrain, diameter } = this.state;
+    
+    const currentCategory = this.getCurrentCategory();
+
+    const filteredCategory = currentCategory.filter(currentCategory => {
+      return currentCategory.name.toLowerCase().includes(searchField.toLowerCase());
+    })
 
     return(
       <div>
@@ -150,26 +180,13 @@ class App extends Component {
             <div className='tc'>
               <SearchBox onSearchChange={this.onSearchChange} route={ route } />
               <Display 
-                route={ route } name={ name } height={ height } mass={ mass } birthYear={ birthYear } manufacturer={ manufacturer } starshipClass={ starshipClass } passenger={ passenger } climate={ climate } terrain={ terrain } diameter={ diameter }/>
-              <CardList route={ route } people={ people } onCardClick={this.onCardClick} />
+                route={ route } name={ name } height={ height } mass={ mass } birthYear={ birthYear } manufacturer={ manufacturer } starshipClass={ starshipClass } passenger={ passenger } climate={ climate } terrain={ terrain } diameter={ diameter }/>              
+                <CardList route={ route } filteredCategory={ filteredCategory } onCardClick={this.onCardClick} />            
             </div>
           </div>
       }
       </div>
     );
-
-
-        {
-          // 
-        //
-         //  <Scroll>
-
-        //   <CardList category={  } />
-        // </Scroll>
-      } 
-
-
-
   }
 }
 

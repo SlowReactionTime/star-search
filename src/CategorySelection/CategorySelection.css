@@ -1,3 +1,5 @@
+
+
 .ba {
     border-style: solid;
     border-width: 1px;
@@ -34,14 +36,6 @@
 
 .lh-copy {
     line-height: 1.5;
-}
-
-.mw3 {
-    max-width: 20rem;
-}
-
-.mw5 {
-    max-width: 30rem;
 }
 
 .w3 {
@@ -248,7 +242,7 @@
 }
 
 .f1 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 
@@ -274,4 +268,5 @@
     opacity: 1;
     transition: opacity .15s ease-in;
 }
+
 
