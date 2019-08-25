@@ -39,10 +39,26 @@ class App extends Component {
       route: 'character',
       searchField: '',
       people: [],
+      starships: [],
+      planetes: [],
+
+      //states for character
       name: '',
       height: '',
-      mass: ''
+      mass: '',
+      birthYear: '',      
 
+      //states for starship
+    //name:
+      manufacturer: '',
+      starshipClass: '',
+      passenger: '',
+
+      //states for planets
+    //name:
+      climate: '',
+      terrain: '',
+      diameter: ''
     } 
 
     this.getCharacter = this.getCharacter.bind(this);
@@ -67,19 +83,60 @@ class App extends Component {
       })
   }
 
+  getStarship() {
+    const url='https://swapi.co/api/starships';
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    return axios.get(proxyurl + url)
+      .then((response) => {
+          console.log(response.data.results)
+          this.setState( { starships: response.data.results})
+      })
+  }
+
+  getPlanet() {
+    const url='https://swapi.co/api/planets';
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    return axios.get(proxyurl + url)
+      .then((response) => {
+          console.log(response.data.results)
+          this.setState( { planets: response.data.results})
+      })
+  }
+
   componentDidMount() {
-    this.getCharacter()
+    this.getCharacter();
+    this.getStarship();
+    this.getPlanet();
   }
 
   onCardClick = (id) => {
-    const person = this.state.people[id - 1]
-    this.setState({name: person.name});
-    this.setState({height: person.height});
-    this.setState({mass: person.mass});
+
+    if (this.state.route === 'character') {
+      var person = this.state.people[id - 1];
+
+      this.setState({name: person.name});
+      this.setState({height: person.height});
+      this.setState({mass: person.mass});
+      this.setState({birthYear: person.birth_year});
+    } else if (this.state.route === 'starship') {
+      var starship = this.state.starships[id - 1];
+
+      this.setState({name: starship.name});
+      this.setState({manufacturer: starship.manufacturer});
+      this.setState({starshipClass: starship.starship_class});
+      this.setState({passenger: starship.passengers});
+    } else {
+      var planet = this.state.planets[id - 1];
+
+      this.setState({name: planet.name});
+      this.setState({climate: planet.climate});
+      this.setState({terrain: planet.terrain});
+      this.setState({diameter: planet.diameter});
+    }
   }
 
   render() {
-    const { route, people, name, height, mass } = this.state;
+    const { route, people, name, height, mass, birthYear, manufacturer, starshipClass, passenger, climate, terrain, diameter } = this.state;
 
     return(
       <div>
@@ -92,7 +149,8 @@ class App extends Component {
             <Logo route={ route } />
             <div className='tc'>
               <SearchBox onSearchChange={this.onSearchChange} route={ route } />
-              <Display name={ name } height={ height } mass={ mass }/>
+              <Display 
+                route={ route } name={ name } height={ height } mass={ mass } birthYear={ birthYear } manufacturer={ manufacturer } starshipClass={ starshipClass } passenger={ passenger } climate={ climate } terrain={ terrain } diameter={ diameter }/>
               <CardList route={ route } people={ people } onCardClick={this.onCardClick} />
             </div>
           </div>
