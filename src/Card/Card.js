@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ id, name, image, route }) => {
+const Card = ({ id, name, image, route, onCardClick }) => {
 
 	var backgroundColor = '';
 
@@ -14,8 +14,8 @@ const Card = ({ id, name, image, route }) => {
 	}
 
 	return (
-		<div className={"mw5 tc dib br3 pa3 ma2 grow bw2 shadow-5 " + backgroundColor}>
-			<img className="img-size-medium" alt='image' src={ image }/>
+		<div onClick={() => onCardClick(id)} className={'mw5 tc dib br3 pa3 ma2 grow bw2 shadow-5 pointer ' + backgroundColor}>
+			<img className="img-size-medium" alt='' src={ image }/>
 				<div>
 					<h2>{ name }</h2>
 				</div>

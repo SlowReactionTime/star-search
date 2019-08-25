@@ -2,14 +2,14 @@ import React from 'react';
 import { Component } from 'react';
 import './App.css';
 import Navigation from './Navigation/Navigation.js';
-import Card from './Card/Card.js';
 import CardList from './CardList/CardList.js';
 import CategorySelection from './CategorySelection/CategorySelection.js';
 import Logo from './Logo/Logo.js';
 import SearchBox from './SearchBox/SearchBox.js';
+import Display from './Display/Display.js';
 import Scroll from './Scroll.js';
 import Particles from 'react-particles-js';
-import {render} from 'react-dom';
+import axios from 'axios';
 
 const constParticles = {
   particles: {
@@ -37,8 +37,15 @@ class App extends Component {
     super();
     this.state = {
       route: 'character',
-      searchField: ''
+      searchField: '',
+      people: [],
+      name: '',
+      height: '',
+      mass: ''
+
     } 
+
+    this.getCharacter = this.getCharacter.bind(this);
   };
 
   onRouteChange = (route) => {
@@ -50,8 +57,29 @@ class App extends Component {
     console.log(event);
   }
 
+  getCharacter() {
+    const url='https://swapi.co/api/people';
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    return axios.get(proxyurl + url)
+      .then((response) => {
+          console.log(response.data.results)
+          this.setState( { people: response.data.results})
+      })
+  }
+
+  componentDidMount() {
+    this.getCharacter()
+  }
+
+  onCardClick = (id) => {
+    const person = this.state.people[id - 1]
+    this.setState({name: person.name});
+    this.setState({height: person.height});
+    this.setState({mass: person.mass});
+  }
+
   render() {
-    const { route } = this.state;
+    const { route, people, name, height, mass } = this.state;
 
     return(
       <div>
@@ -64,7 +92,8 @@ class App extends Component {
             <Logo route={ route } />
             <div className='tc'>
               <SearchBox onSearchChange={this.onSearchChange} route={ route } />
-              <CardList route={ route } />
+              <Display name={ name } height={ height } mass={ mass }/>
+              <CardList route={ route } people={ people } onCardClick={this.onCardClick} />
             </div>
           </div>
       }

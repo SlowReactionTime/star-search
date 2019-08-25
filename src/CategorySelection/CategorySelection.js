@@ -11,9 +11,9 @@ const CategorySelection = ({ onRouteChange }) => {
 			  </div>
 			
 					<div className="ph3 tc">
-					  <p onClick={() => onRouteChange('character')} className="f3 link glow br3 ph3 pv2 mb2 dib white bg-dark-gold" >Character</p>
-					  <p onClick={() => onRouteChange('starship')} className="f3 link glow br3 ph3 pv2 mb2 dib white bg-teal">Starship</p>
-					  <p onClick={() => onRouteChange('planet')} className="f3 link glow br3 ph3 pv2 mb2 dib white bg-brown">Planet</p>
+					  <p onClick={() => onRouteChange('character')} className="f3 link grow glow br3 ph3 pv2 mb2 dib white bg-dark-gold pointer" >Character</p>
+					  <p onClick={() => onRouteChange('starship')} className="f3 link grow glow br3 ph3 pv2 mb2 dib white bg-teal pointer">Starship</p>
+					  <p onClick={() => onRouteChange('planet')} className="f3 link grow glow br3 ph3 pv2 mb2 dib white bg-brown pointer">Planet</p>
 					</div>
 			</article>
 			</div>
