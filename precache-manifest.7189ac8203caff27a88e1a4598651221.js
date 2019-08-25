@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "485950c9f084083599ab1b67f062c7ac",
+    "revision": "fa23ec1c91f7ecf6671c00e11f2cfae4",
     "url": "/star-search/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/star-search/static/css/2.31dafeb2.chunk.css"
   },
   {
-    "revision": "ec9c7e2b45be49add05b",
-    "url": "/star-search/static/css/main.8926c7c0.chunk.css"
+    "revision": "0f049eb4f181e8950c57",
+    "url": "/star-search/static/css/main.83af7166.chunk.css"
   },
   {
     "revision": "a9df2474fc44a94f8bed",
     "url": "/star-search/static/js/2.38f7023b.chunk.js"
   },
   {
-    "revision": "ec9c7e2b45be49add05b",
-    "url": "/star-search/static/js/main.cf335dc1.chunk.js"
+    "revision": "0f049eb4f181e8950c57",
+    "url": "/star-search/static/js/main.5feaeb24.chunk.js"
   },
   {
     "revision": "dba8e73d30a929153967",
