@@ -5,10 +5,10 @@ import '../Logo/Logo.css';
 const CategorySelection = ({ onRouteChange }) => {
 		return (
 			<div className="pa6">
-			<article className="mw7 center bg-black br3 pa3 pa4-ns ba b--black-10">
+			<article className="mw7 center bg-black br3 pa3 pa4-ns ba">
 			  <div className="tc">
 			    <h1 className="tc font-big font-star-wars">STAR <br/> SEARCH</h1>
-			    <hr className="white mw6 bb bw1 b--black-10" />
+			    <hr className="bg-white mw6 bb bw1 b--black-10" />
 			  </div>
 			
 					<div className="ph3 tc">

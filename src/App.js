@@ -81,6 +81,7 @@ class App extends Component {
     this.setState({climate: ''});
     this.setState({terrain: ''});
     this.setState({diameter: ''});
+    this.setState({searchField: ''});
   }  
 
   onSearchChange = (event) => {
