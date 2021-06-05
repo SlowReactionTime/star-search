@@ -49,13 +49,11 @@ class App extends Component {
       birthYear: '',      
 
       //states for starship
-    //name:
       manufacturer: '',
       starshipClass: '',
       passenger: '',
 
       //states for planets
-    //name:
       climate: '',
       terrain: '',
       diameter: ''
