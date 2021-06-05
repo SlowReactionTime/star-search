@@ -12,5 +12,6 @@ Publication on my GitHub: https://slowreactiontime.github.io/star-search/ <br />
 
 # Note
 
-* ~~The Star Wars API that I used: https://swapi.co/~~ (the API is no longer supported. For more info: https://swapi.dev/about)
+* ~~The Star Wars API that I used: https://swapi.co/~~ (SW API migrated, so this app was updated accordingly. For more info: https://swapi.dev/about)
 * Using images under the conditions of Fair Use (for educational purpose and self-amusement :sunglasses:).
+* This API seems to frequenly rearrange IDs and characters/ships/planets. Cards and displayed info may mismatch in future's updates.
