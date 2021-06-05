@@ -12,53 +12,32 @@ import EF76NebulonBEscortFrigate from './10.jpg';
 
 export const starship = [
   {
-    id: 1,
-    name: 'Executor',
-    image: Executor
-  },
-  {
     id: 2,
-    name: 'Sentinel-class landing craft',
-    image: SentinelClassLandingCraft
+    name: 'CR90 corvette',
   },
   {
     id: 3,
-    name: 'Death Star',
-    image: DeathStar
+    name: 'Star Destroyer',
   },
-  {
-    id: 4,
-    name: 'Millennium Falcon',
-    image: MillenniumFalcon
-  },
+
   {
     id: 5,
-    name: 'Y-wing',
-    image: Ywing
+    name: `Sentinel-class landing craft`,
   },
   {
-    id: 6,
-    name: 'X-wing',
-    image: Xwing
-  },
-   {
-    id: 7,
-    name: 'TIE Advanced x1',
-    image: TIEAdvancedx1
-  },
-   {
-    id: 8,
-    name: 'Slave 1',
-    image: Slave1
-  },
-   {
     id: 9,
-    name: 'Imperial shuttle',
-    image: ImperialShuttle
+    name: `Death Star`,
   },
-   {
+  {
     id: 10,
-    name: 'EF76 Nebulon-B escort frigate',
-    image: EF76NebulonBEscortFrigate
+    name: `Millennium Falcon`,
+  },
+  {
+    id: 11,
+    name: `Y-wing`,
+  },
+  {
+    id: 12,
+    name: `X-wing`,
   },
 ];

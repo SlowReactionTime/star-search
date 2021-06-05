@@ -7,11 +7,10 @@ import CategorySelection from './CategorySelection/CategorySelection.js';
 import Logo from './Logo/Logo.js';
 import SearchBox from './SearchBox/SearchBox.js';
 import Display from './Display/Display.js';
-import { character } from './character/character.js';
+import { character } from './Character/character.js';
 import { starship } from './starship/starship.js';
 import { planet } from './planet/planet.js';
 import Particles from 'react-particles-js';
-import axios from 'axios';
 
 const constParticles = {
   particles: {
@@ -22,7 +21,6 @@ const constParticles = {
         value_area: 800
       }
     },
-
 
     line_linked: {
      shadow: {
@@ -40,9 +38,9 @@ class App extends Component {
     this.state = {
       route: 'home',
       searchField: '',
-      people: [],
-      starships: [],
-      planetes: [],
+      person: [],
+      starship: [],
+      planet: [],
 
       //states for character
       name: '',
@@ -62,8 +60,6 @@ class App extends Component {
       terrain: '',
       diameter: ''
     } 
-
-    this.getCharacter = this.getCharacter.bind(this);
   };
 
   onRouteChange = (route) => {
@@ -88,65 +84,57 @@ class App extends Component {
     this.setState({ searchField: event.target.value });
   }
 
-  getCharacter() {
-    const url='https://swapi.co/api/people';
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    return axios.get(proxyurl + url)
-      .then((response) => {
-          console.log(response.data.results)
-          this.setState( { people: response.data.results})
-      })
+  setStateCharacter(id) {
+    const url='https://swapi.dev/api/people/' + id + `/`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({name: data.name});
+          this.setState({height: data.height});
+          this.setState({mass: data.mass});
+          this.setState({birthYear: data.birth_year});
+        });
+
+    return this.state.person;
   }
 
-  getStarship() {
-    const url='https://swapi.co/api/starships';
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    return axios.get(proxyurl + url)
-      .then((response) => {
-          console.log(response.data.results)
-          this.setState( { starships: response.data.results})
-      })
+  setStateStarship(id) {
+    const url='https://swapi.dev/api/starships/' + id + `/`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({name: data.name});
+          this.setState({manufacturer: data.manufacturer});
+          this.setState({starshipClass: data.starship_class});
+          this.setState({passenger: data.passengers});
+        });
+
+    return this.state.starship;
   }
 
-  getPlanet() {
-    const url='https://swapi.co/api/planets';
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    return axios.get(proxyurl + url)
-      .then((response) => {
-          console.log(response.data.results)
-          this.setState( { planets: response.data.results})
-      })
-  }
+  setStatePlanet(id) {
+    const url='https://swapi.dev/api/planets/' + id + `/`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({name: data.name});
+          this.setState({climate: data.climate});
+          this.setState({terrain: data.terrain});
+          this.setState({diameter: data.diameter});
+        });
 
-  componentDidMount() {
-    this.getCharacter();
-    this.getStarship();
-    this.getPlanet();
+        return this.state.planet;
   }
 
   onCardClick = (id) => {
+    if (this.state.route === 'character') {  
+      this.setStateCharacter(id);
 
-    if (this.state.route === 'character') {
-      var person = this.state.people[id - 1];
-
-      this.setState({name: person.name});
-      this.setState({height: person.height});
-      this.setState({mass: person.mass});
-      this.setState({birthYear: person.birth_year});
     } else if (this.state.route === 'starship') {
-      var starship = this.state.starships[id - 1];
+      this.setStateStarship(id);
 
-      this.setState({name: starship.name});
-      this.setState({manufacturer: starship.manufacturer});
-      this.setState({starshipClass: starship.starship_class});
-      this.setState({passenger: starship.passengers});
     } else {
-      var planet = this.state.planets[id - 1];
-
-      this.setState({name: planet.name});
-      this.setState({climate: planet.climate});
-      this.setState({terrain: planet.terrain});
-      this.setState({diameter: planet.diameter});
+      this.setStatePlanet(id);
     }
   }
 
