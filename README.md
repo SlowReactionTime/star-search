@@ -12,5 +12,5 @@ Publication on my GitHub: https://slowreactiontime.github.io/star-search/ <br />
 
 # Note
 
-* The Star Wars API that I used: https://swapi.co/
-* I used images under the conditions of Fair Use (for educational purpose and self-amusement :sunglasses:). If you need some of the images taken down for whatever the reason, just contact me.
+* ~~The Star Wars API that I used: https://swapi.co/~~ (the API is no longer supported. For more info: https://swapi.dev/about)
+* Using images under the conditions of Fair Use (for educational purpose and self-amusement :sunglasses:).
